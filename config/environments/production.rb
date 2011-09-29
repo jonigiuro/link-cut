@@ -47,4 +47,4 @@ Tinyurl::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 end
-BASE_URL = "http://glowing-rain-7615.heroku.com/"
+BASE_URL = "http://evening-beach-7146.heroku.com/"

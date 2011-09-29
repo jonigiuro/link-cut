@@ -52,7 +52,9 @@ class LinksController < ApplicationController
   
   def hola
     
-
+    if Link.where('comp' => params[:full_path]).count != 0
+      redirect_to Link.where('comp'  => params[:full_path]).first.orig and return
+    else
       if Link.where('orig' => params[:full_path]).count != 0
         @link = Link.where('orig' => params[:full_path]).first
         @link.total = @link.total + 1
@@ -77,7 +79,7 @@ class LinksController < ApplicationController
           end
         @link.save
       end
-    
+    end
   end
   
   def home

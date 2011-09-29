@@ -2,6 +2,7 @@ Tinyurl::Application.routes.draw do
   resources :links
   #match '/hola' => 'links#hola'
   #match '/*full_path' => 'links#create'
+  match '/'  => 'links#home'
   match '/*full_path' => 'links#hola'
   #match '/go/:short' => 'links#go'
   # The priority is based upon order of creation:

@@ -1,6 +1,6 @@
 _load = function(u){
 	var da_string = u;
-	addElement("<%= @link.orig %>","http://localhost:3000/"+"<%= @link.comp %>")
+	addElement("<%= @link.orig %>","<%= BASE_URL %>"+"<%= @link.comp %>")
 };
 
 function addElement(link_orig, link_comp) {

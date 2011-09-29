@@ -47,3 +47,4 @@ Tinyurl::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 end
+BASE_URL = "http://glowing-rain-7615.heroku.com/"

@@ -67,4 +67,8 @@ class LinksController < ApplicationController
       end
     end
   end
+  
+  def home
+    
+  end
 end

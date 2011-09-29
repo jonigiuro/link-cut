@@ -1,9 +1,12 @@
 Tinyurl::Application.routes.draw do
+  devise_for :users
+
   resources :links
   #match '/hola' => 'links#hola'
   #match '/*full_path' => 'links#create'
   match '/'  => 'links#home'
   match '/*full_path' => 'links#hola'
+  root :to  => 'links#home'
   #match '/go/:short' => 'links#go'
   # The priority is based upon order of creation:
   # first created -> highest priority.

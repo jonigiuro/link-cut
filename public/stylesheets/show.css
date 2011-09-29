@@ -19,7 +19,7 @@ body{
 }
 #main{
 	margin:auto;
-	margin-top:100px;
+	margin-top:70px;
 	width:960px;
 }
 #content{
@@ -36,4 +36,18 @@ body{
 	padding:20px;
 	text-align:center;
 	color:#49545B;
+}
+
+img{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding:10px;
+	background-color:#49545B;
+	overflow:hidden;
+}
+
+#footer{
+	font-size:9px;
+	text-align:right;
 }

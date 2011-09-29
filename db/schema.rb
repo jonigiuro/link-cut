@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110927073917) do
+ActiveRecord::Schema.define(:version => 20110929130211) do
 
   create_table "links", :force => true do |t|
     t.string   "orig"
     t.string   "comp"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "total",      :default => 0
   end
 
 end

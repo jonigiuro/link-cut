@@ -55,6 +55,8 @@ class LinksController < ApplicationController
     else
       if Link.where('orig' => params[:full_path]).count != 0
         @link = Link.where('orig' => params[:full_path]).first
+        @link.total = @link.total + 1
+        @link.save
       else
         @link=Link.new
         @link.orig = params[:full_path]

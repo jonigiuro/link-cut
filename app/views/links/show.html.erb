@@ -1,0 +1,15 @@
+
+<div id="main">
+<div id="header"><h2>urlcut</h2></div>
+<p>
+  <b>The compressed link is:</b>
+  <div id="comp"><%= link_to "http://localhost:3000/#{@link.comp}", "http://localhost:3000/#{@link.comp}", :target  => '_blank' %></div>
+</p>
+<br />
+<p>
+	<b>The original link is:</b>
+  <div id="orig"><%= @link.orig %></div>
+  
+</p>
+
+</div>

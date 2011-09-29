@@ -1,0 +1,37 @@
+_load = function(u){
+	var da_string = u;
+	addElement("<%= @link.orig %>","http://localhost:3000/"+"<%= @link.comp %>")
+};
+
+function addElement(link_orig, link_comp) {
+	var newdiv = document.createElement('div');
+	var divIdName = 'my_short_and_long_link';
+	newdiv.setAttribute('id',divIdName);
+	newdiv.style.width = "100%";
+	newdiv.style.padding = "10px";
+	newdiv.style.left = "0";
+	newdiv.style.top = "0";
+	newdiv.style.position = "fixed";
+	newdiv.style.background = "#E5EECC";
+	newdiv.style.fontFamily = "Helvetica"
+	newdiv.style.border = "1px solid #000";
+	newdiv.style.color = "#000";
+	newdiv.style.fontWeight = "bold";
+	newdiv.style.fontSize = "11px";
+	newdiv.style.zIndex = "1000";
+	newdiv.style.textAlign = "Left";
+	newdiv.innerHTML =
+	"Complete link: " + 
+	 link_orig + "<br />" + 
+	"Short link: " + "<a href=" + link_comp + ">" + link_comp + "</a>";
+	document.body.appendChild(newdiv);
+	timer();
+}
+//function timer(){
+	//var t=setTimeout("disappear()",1000);
+//}
+//function disappear(){
+
+//}
+_load(encodeURIComponent(location.href));
+

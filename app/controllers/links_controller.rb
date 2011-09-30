@@ -1,8 +1,7 @@
 class LinksController < ApplicationController
-
-  require 'rubygems'
-  require 'open-uri'
-  require 'nokogiri'
+  #require 'rubygems'
+  #require 'hpricot'
+  #require 'open-uri'
   
   def index
     @links = Link.all
@@ -29,9 +28,13 @@ class LinksController < ApplicationController
       else
         @link=Link.new
         @link.orig = params[:full_path]
-        doc = Nokogiri::HTML(open(params[:full_path]))
-        @link.title = (doc.at_css("title").text).to_s
-        #@link.title="dummy_title"
+        #doc = Nokogiri::HTML(open(params[:full_path]))
+        #@link.title = (doc.at_css("title").text).to_s
+        
+        #@url = params[:full_path];
+        #@hp = Hpricot(open(@url))
+          
+        @link.title='dummy_title'
         if Link.count == 0
           @link.comp = '0'
         else

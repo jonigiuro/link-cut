@@ -34,6 +34,7 @@ GEM
       warden (~> 0.10.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    hpricot (0.8.4)
     i18n (0.5.0)
     jquery-rails (1.0.13)
       railties (~> 3.0)
@@ -44,7 +45,6 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    nokogiri (1.5.0)
     polyglot (0.3.2)
     rack (1.2.4)
     rack-mount (0.6.14)
@@ -81,7 +81,7 @@ PLATFORMS
 
 DEPENDENCIES
   devise (= 1.1.rc0)
+  hpricot
   jquery-rails (>= 0.2.6)
-  nokogiri
   rails (= 3.0.10)
   sqlite3

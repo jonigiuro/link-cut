@@ -1,5 +1,9 @@
 class LinksController < ApplicationController
 
+  require 'rubygems'
+  require 'open-uri'
+  require 'nokogiri'
+  
   def index
     @links = Link.all
 
@@ -25,7 +29,9 @@ class LinksController < ApplicationController
       else
         @link=Link.new
         @link.orig = params[:full_path]
-        @link.title = params[:title]
+        doc = Nokogiri::HTML(open(params[:full_path]))
+        @link.title = (doc.at_css("title").text).to_s
+        #@link.title="dummy_title"
         if Link.count == 0
           @link.comp = '0'
         else
@@ -38,7 +44,6 @@ class LinksController < ApplicationController
         puts "ciao"
         render :action => "notlogged"
         return false
-      
     end
   end
   

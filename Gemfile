@@ -8,8 +8,6 @@ gem 'rails', '3.0.10'
 gem 'sqlite3'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'devise', '1.1.rc0'
-gem 'hpricot'
-gem 'open-uri'
 
 # Use unicorn as the web server
 # gem 'unicorn'

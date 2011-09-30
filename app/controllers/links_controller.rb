@@ -18,19 +18,19 @@ class LinksController < ApplicationController
   end
   
   def hola  
-      @link=Link.new
-      @link.orig = params[:full_path]
-      if Link.count == 0
-        @link.comp = '0'
-      else
-        @link.comp = (Link.last.id + 1).to_s(36)
-      end
-      if user_signed_in?
-        @link.user_id = current_user.id
-      else
-        @link.user_id = 0
-      end
-      @link.save
+    @link=Link.new
+    @link.orig = params[:full_path]
+    if Link.count == 0
+      @link.comp = '0'
+    else
+      @link.comp = (Link.last.id + 1).to_s(36)
+    end
+    if user_signed_in?
+      @link.user_id = current_user.id
+    else
+      @link.user_id = 0
+    end
+    @link.save
   end
   
   def home

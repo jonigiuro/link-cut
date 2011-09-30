@@ -18,7 +18,7 @@ class LinksController < ApplicationController
   end
   
   def hola
-    if Link.where('orig'  => params[:full_path]),count != 0
+    if Link.where('orig'  => params[:full_path]).count != 0
       return false
     else
       @link=Link.new
@@ -37,6 +37,7 @@ class LinksController < ApplicationController
       @link.save
     end
   end
+  
   def home
     if user_signed_in?
       @links = Link.where("user_id"  => current_user.id)

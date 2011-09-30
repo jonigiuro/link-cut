@@ -13,7 +13,7 @@
 			<% @links.each do |link| %>
 			  <tr>
 			    <td><%= link_to link.orig, link.orig %></td>
-			    <td>http://evening-beach-7146.heroku.com/<%= link.comp %></td>
+			    <td><%= BASE_URL %>o/<%= link.comp %></td>
 
 			  </tr>
 			<% end %>

@@ -2,6 +2,7 @@ body{
 	font-family:"Helvetica", "Arial", "Sans-Serif";
 	background-color:#49545B;
 	color:#fff;
+	height:100%;
 }
 #header{
 	-moz-border-radius-topleft: 10px;
@@ -33,7 +34,7 @@ body{
 	background-color:#D6D6D6;
 	font-size:12px;
 	font-weight:bold;
-	padding:20px;
+	padding:10px;
 	text-align:center;
 	color:#49545B;
 }
@@ -77,5 +78,20 @@ td{
 }
 
 #table_links th{
+	text-align:center;
+}
+
+tr.even td{
+	padding:5px;
+	background-color:#bbb;
+}
+
+.longone{
+
+	width:700px;
+}
+
+.shortone{
+	width:240px;
 	text-align:center;
 }

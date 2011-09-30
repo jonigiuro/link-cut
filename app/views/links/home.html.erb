@@ -11,9 +11,9 @@
 			  </tr>
 
 			<% @links.each do |link| %>
-			  <tr>
-			    <td><%= link_to link.orig, link.orig %></td>
-			    <td><%= BASE_URL %>o/<%= link.comp %></td>
+			  <tr class="<%= cycle("even", "odd") %>">
+			    <td class="longone"><%= link_to truncate(link.orig, :length  => 85), link.orig %></td>
+			    <td class="shortone"><%= BASE_URL %>o/<%= link.comp %></td>
 				</tr>
 			<% end %>
 			

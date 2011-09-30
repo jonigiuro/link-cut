@@ -18,23 +18,26 @@ class LinksController < ApplicationController
   end
   
   def hola
-    if Link.where('orig'  => params[:full_path]).count != 0
-      return false
-    else
-      @link=Link.new
-      @link.orig = params[:full_path]
-      if Link.count == 0
-        @link.comp = '0'
+    if user_signed_in?
+      if Link.where('orig' => params[:full_path], 'user_id'  => current_user.id).count != 0
+        render :action => "duplicate"
+        return false
       else
-        @link.comp = (Link.last.id + 1).to_s(36)
-      end
-    
-      if user_signed_in?
+        @link=Link.new
+        @link.orig = params[:full_path]
+        if Link.count == 0
+          @link.comp = '0'
+        else
+          @link.comp = (Link.last.id + 1).to_s(36)
+        end
         @link.user_id = current_user.id
+        @link.save
+        end
       else
-        @link.user_id = 0
-      end
-      @link.save
+        puts "ciao"
+        render :action => "notlogged"
+        return false
+      
     end
   end
   
@@ -42,5 +45,13 @@ class LinksController < ApplicationController
     if user_signed_in?
       @links = Link.where("user_id"  => current_user.id)
     end
+  end
+  
+  def duplicate
+   
+  end
+  
+  def notlogged
+    
   end
 end

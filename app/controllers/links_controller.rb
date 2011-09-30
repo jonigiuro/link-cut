@@ -25,6 +25,7 @@ class LinksController < ApplicationController
       else
         @link=Link.new
         @link.orig = params[:full_path]
+        @link.title = params[:title]
         if Link.count == 0
           @link.comp = '0'
         else

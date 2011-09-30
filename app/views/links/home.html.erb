@@ -6,13 +6,15 @@
 	<div id="table_links">
 			<table>
 			  <tr>
+					<th>Title</th>
 			    <th>Original</th>
 			    <th>Compressed</th>
 			  </tr>
 
 			<% @links.each do |link| %>
 			  <tr class="<%= cycle("even", "odd") %>">
-			    <td class="longone"><%= link_to truncate(link.orig, :length  => 85), link.orig %></td>
+					<td class="titolo"><%= truncate(link.title, :length  => 40) %></td>
+			    <td class="longone"><%= link_to truncate(link.orig, :length  => 65), link.orig %></td>
 			    <td class="shortone"><%= BASE_URL %>o/<%= link.comp %></td>
 				</tr>
 			<% end %>

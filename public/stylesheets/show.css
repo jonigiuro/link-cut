@@ -86,12 +86,19 @@ tr.even td{
 	background-color:#bbb;
 }
 
-.longone{
+tr.odd td{
+	padding:5px;
+}
 
-	width:700px;
+.longone{
+	width:600px;
 }
 
 .shortone{
 	width:240px;
 	text-align:center;
+}
+
+.titolo{
+	width:300px;
 }

@@ -25,7 +25,9 @@ class LinksController < ApplicationController
     if Link.where('comp'  => params[:full_path]).count == 0
       render :action  => "non_existing"
       return false
-    redirect_to Link.where('comp'  => params[:full_path]).first.orig and return
+    else
+      redirect_to Link.where('comp'  => params[:full_path]).first.orig and return
+    end
   end
   
   def hola

@@ -14,7 +14,7 @@
 
 			<% @links.each do |link| %>
 			  <tr class="<%= cycle("even", "odd") %>">
-					<td class="titolo"><%= truncate(link.title, :length  => 40) %></td>
+					<td class="titolo"><%= truncate(link.title, :length  => 50) %></td>
 			    <td class="longone"><%= link_to truncate(link.orig, :length  => 45), link.orig %></td>
 			    <td class="shortone"><%= BASE_URL %>o/<%= link.comp %></td>
 					<td class="destroy"><%= button_to "X", { :action => "destroy", :id => link.id },

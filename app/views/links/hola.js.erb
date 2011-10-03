@@ -23,9 +23,19 @@ function addElement(link_orig, link_comp) {
 	newdiv.innerHTML =
 	"Complete link: " + 
 	 link_orig + "<br />" + 
-	"Short link: " + "<a href=" + link_comp + ">" + link_comp + "</a>";
+	"Short link: " + "<a href=" + link_comp + ">" + link_comp + "</a>"+"<br />"+
+	
+	"<a href='javascript:closeBox()'>Close</a>";
+
 	document.body.appendChild(newdiv);
 	timer();
+}
+
+function closeBox(){
+	//alert('hola')
+	var myDiv = document.getElementById('my_short_and_long_link');
+	myDiv.parentNode.removeChild(myDiv);
+	//myDiv.style.color="#f00";
 }
 //function timer(){
 	//var t=setTimeout("disappear()",1000);
@@ -34,4 +44,3 @@ function addElement(link_orig, link_comp) {
 
 //}
 _load(encodeURIComponent(location.href));
-

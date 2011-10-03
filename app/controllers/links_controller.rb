@@ -32,6 +32,7 @@ class LinksController < ApplicationController
         url = params[:full_path]
         doc = Nokogiri::HTML(open(url))
         @link.title=doc.at_css("title").text
+        #@link.title="test"
         if Link.count == 0
           @link.comp = '0'
         else

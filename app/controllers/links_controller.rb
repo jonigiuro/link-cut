@@ -49,10 +49,10 @@ class LinksController < ApplicationController
         end
         @link.user_id = current_user.id
         @link.save
+        redirect_to :root
         end
       else
         render :action => "notlogged"
-        return false
     end
   end
   

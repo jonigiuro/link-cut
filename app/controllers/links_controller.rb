@@ -22,6 +22,9 @@ class LinksController < ApplicationController
     redirect_to :root
   end
   def redir
+    if Link.where('comp'  => params[:full_path]).count == 0
+      render :action  => "non_existing"
+      return false
     redirect_to Link.where('comp'  => params[:full_path]).first.orig and return
   end
   
@@ -62,6 +65,10 @@ class LinksController < ApplicationController
   end
   
   def notlogged
+    
+  end
+  
+  def non_existing
     
   end
   

@@ -16,20 +16,4 @@ class LinksControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create link" do
-    assert_difference('Link.count') do
-      post :create, :link => @link.attributes
-    end
-  end
-
-  test "should show link" do
-    get :show, :id => @link.to_param
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, :id => @link.to_param
-    assert_response :success
-  end
-
 end

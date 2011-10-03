@@ -100,5 +100,9 @@ tr.odd td{
 }
 
 .titolo{
-	width:300px;
+	width:270px;
+}
+
+.destroy{
+	text-align:center;
 }

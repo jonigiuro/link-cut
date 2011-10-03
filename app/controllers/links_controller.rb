@@ -17,6 +17,10 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
   end
   
+  def destroy
+    Link.find(params[:id]).destroy
+    redirect_to :root
+  end
   def redir
     redirect_to Link.where('comp'  => params[:full_path]).first.orig and return
   end

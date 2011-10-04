@@ -58,6 +58,12 @@ class LinksController < ApplicationController
   def home
     if user_signed_in?
       @links = Link.where("user_id"  => current_user.id)
+      @links.sort! { |a,b| b.created_at <=> a.created_at }
+    end
+    
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
   

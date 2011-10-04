@@ -106,3 +106,10 @@ tr.odd td{
 .destroy{
 	text-align:center;
 }
+
+#refresh{
+	text-align:right;
+	font-weight:bold;
+	margin-top:20px;
+	margin-bottom:10px;
+}

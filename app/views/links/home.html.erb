@@ -1,8 +1,9 @@
-	
+
 <% if user_signed_in?%>
 	
 		<% if Link.where("user_id"  => current_user.id).count != 0%>
 			<h1> Your links </h1>
+			
 	<div id="table_links">
 			<table>
 			  <tr>
@@ -23,6 +24,7 @@
 			<% end %>
 			
 			</table>
+			<div id="refresh"><%= link_to "REFRESH", root_path %></div>
 			</div>
 		<% else %>
 			You don't have any links yet

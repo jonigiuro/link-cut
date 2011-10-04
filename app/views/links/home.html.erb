@@ -2,7 +2,7 @@
 <% if user_signed_in?%>
 	
 		<% if Link.where("user_id"  => current_user.id).count != 0%>
-			<h1> Your links [<%= link_to "REFRESH", {:controller  => 'links', :action  => 'home'}, :remote  => true %>]</h1>
+			<h1> Your links [<%= link_to ("<em>refresh</em>").html_safe, {:controller  => 'links', :action  => 'home'}, :remote  => true %>]</h1>
 			<div id="table_links">
 				<%= render :partial => 'links' %>
 			</div>
@@ -13,15 +13,15 @@
 <% else %>
 
 	1. Drag this ->
-	<a href="javascript:var%20e=document.createElement('script');e.setAttribute('language','javascript');e.setAttribute('src','<%= BASE_URL %>i/'+encodeURIComponent(location.href));document.body.appendChild(e);void(0);">link-cut</a> <- link to you toolbar<br />
-	2. Click it whenever you want to send a long link<br />
-	3. Copy the shorter link and send it<br />
-	4. Go to the bar and have a beer<br />
-	5. Thank you<br />
-	6. Register if you want to keep track of all your links.<br /><br />
+	<a href="javascript:var%20e=document.createElement('script');e.setAttribute('language','javascript');e.setAttribute('src','<%= BASE_URL %>i/'+encodeURIComponent(location.href));document.body.appendChild(e);void(0);">link-cut</a> <- link to your toolbar<br />
+	2. Create an account on this site (feel free to use a fake email address)<br />
+	3. Surf the internet<br />
+	4. Click on the bookmarklet in your browser's toolbar to shorten and/or store a link (wait for the slow server to respond)<br />
+	5. Visit this site to manage and view all your links<br />
+	6. Enjoy your life.<br />
 	<br />
 	This page is pretty damn empty, so here you have a picture of a horny dog:<br /><br />
-	<img src="/images/goat.jpg"></img><br />
+	<img src="/images/goat.jpg"></img><br /><br />
 
 	<div id="footer">e-mail me at joni.giuro@gmail.com</div>
 

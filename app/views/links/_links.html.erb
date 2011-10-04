@@ -11,8 +11,7 @@
 		<td class="titolo"><%= truncate(link.title, :length  => 50) %></td>
     <td class="longone"><%= link_to truncate(link.orig, :length  => 45), link.orig %></td>
     <td class="shortone"><%= BASE_URL %>o/<%= link.comp %></td>
-		<td class="destroy"><%= button_to "X", { :action => "destroy", :id => link.id },
-		          :confirm => "Are you sure?", :method => :delete%></td>
+		<td class="destroy"><%= button_to "X", { :action => "destroy", :id => link.id }, :remote  => true, :method => :delete %></td>
 	</tr>
 <% end %>
 

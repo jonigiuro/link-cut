@@ -2,29 +2,9 @@
 <% if user_signed_in?%>
 	
 		<% if Link.where("user_id"  => current_user.id).count != 0%>
-			<h1> Your links </h1>
-			
-	<div id="table_links">
-			<table>
-			  <tr>
-					<th>Title</th>
-			    <th>Original</th>
-			    <th>Compressed</th>
-					<th>Destroy</th>
-			  </tr>
-
-			<% @links.each do |link| %>
-			  <tr class="<%= cycle("even", "odd") %>">
-					<td class="titolo"><%= truncate(link.title, :length  => 50) %></td>
-			    <td class="longone"><%= link_to truncate(link.orig, :length  => 45), link.orig %></td>
-			    <td class="shortone"><%= BASE_URL %>o/<%= link.comp %></td>
-					<td class="destroy"><%= button_to "X", { :action => "destroy", :id => link.id },
-					          :confirm => "Are you sure?", :method => :delete %></td>
-				</tr>
-			<% end %>
-			
-			</table>
-			<div id="refresh"><%= link_to "REFRESH", root_path %></div>
+			<h1> Your links [<%= link_to "REFRESH", {:controller  => 'links', :action  => 'home'}, :remote  => true %>]</h1>
+			<div id="table_links">
+				<%= render :partial => 'links' %>
 			</div>
 		<% else %>
 			You don't have any links yet

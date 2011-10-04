@@ -19,7 +19,11 @@ class LinksController < ApplicationController
   
   def destroy
     Link.find(params[:id]).destroy
-    redirect_to :root
+    #redirect_to :root
+    respond_to do |format|
+      format.html {redirect_to root_path}
+      format.js
+    end
   end
   def redir
     if Link.where('comp'  => params[:full_path]).count == 0
@@ -38,10 +42,10 @@ class LinksController < ApplicationController
       else
         @link=Link.new
         @link.orig = params[:full_path]
-        url = params[:full_path]
-        doc = Nokogiri::HTML(open(url))
-        @link.title=doc.at_css("title").text
-        #@link.title="test"
+        #url = params[:full_path]
+        #doc = Nokogiri::HTML(open(url))
+        #@link.title=doc.at_css("title").text
+        @link.title="test"
         if Link.count == 0
           @link.comp = '0'
         else
@@ -60,7 +64,6 @@ class LinksController < ApplicationController
       @links = Link.where("user_id"  => current_user.id)
       @links.sort! { |a,b| b.created_at <=> a.created_at }
     end
-    
     respond_to do |format|
       format.html
       format.js

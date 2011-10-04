@@ -1,1 +1,20 @@
-First app on github readme test
+My first Ruby on Rails app, so it might be a bit of a mess.
+
+Gems used:
+- devise (for users registration-authentication)
+- nokogiri (for parsing the title of the website which is being saved)
+
+To make this work you need to create a bookmarklet which has this as an address: javascript:var%20e=document.createElement('script');e.setAttribute('language','javascript');e.setAttribute('src','http://evening-beach-7146.heroku.com/i/'+encodeURIComponent(location.href));document.body.appendChild(e);void(0);
+
+---OR---
+
+You can visit http://evening-beach-7146.heroku.com/ and drag it from the homepage to your toolbar.
+
+How this works:
+- User visit a page on the internets and clicks on bookmarklet.
+- server receives request and sends it to an action in the controller
+- the controller uses a view.js.erb to create a div on top of what the user is currently seeing.
+
+Off course there's some user authentication in the middle, but that's the basic functionality.
+
+It uses some ajax to remove the links from the list and refresh the view.

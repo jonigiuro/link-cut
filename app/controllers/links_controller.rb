@@ -18,7 +18,7 @@ class LinksController < ApplicationController
   
   def update
     @link = Link.find(params[:lonelink])
-    @link.project_id = params[:project_id]
+    @link.project_id = 1
     @link.save
     redirect_to :root
   end
@@ -54,9 +54,9 @@ class LinksController < ApplicationController
         @link=Link.new
         @link.orig = params[:full_path]
         url = params[:full_path]
-        #doc = Nokogiri::HTML(open(url))
-        #@link.title=doc.at_css("title").text
-        @link.title="test"
+        doc = Nokogiri::HTML(open(url))
+        @link.title=doc.at_css("title").text
+        #@link.title="test"
         if Link.count == 0
           @link.comp = '0'
         else

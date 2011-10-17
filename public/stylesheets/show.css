@@ -120,6 +120,23 @@ tr.odd td{
 	font-size:1em;
 }
 
-.orphan_orig{
-	width:500px;
+.titolo1_2{
+	width:50%;
+	text-align:right;
+	font-size:1em;
+}
+
+tr.even1 td{
+	padding:5px;
+	background-color:#bbb;
+}
+
+tr.odd1 td{
+	padding:5px;
+}
+
+#lonelink_title{
+	text-align:left;
+	width:50%;
+	color:#f00;
 }

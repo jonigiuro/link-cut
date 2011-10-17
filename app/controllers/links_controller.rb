@@ -18,7 +18,7 @@ class LinksController < ApplicationController
   
   def update
     @link = Link.find(params[:lonelink])
-    @link.project_id = 1
+    @link.project_id = Project.find(params[:project_id]).id
     @link.save
     redirect_to :root
   end

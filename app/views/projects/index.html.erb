@@ -2,12 +2,6 @@
 <h1>Listing projects</h1>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @projects.each do |project| %>
   <tr class="<%= cycle("even", "odd") %>">
@@ -23,18 +17,12 @@
 <% if @lonelinks.count != 0 %>
 <h3>Orphan links:</h3>
 <table>
-  <tr>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @lonelinks.each do |lonelink| %>
-  <tr class="<%= cycle("even", "odd") %>">
-    <td><a href="<%= lonelink.orig %>"><%= lonelink.title %></td>
+  <tr class="<%= cycle("even1", "odd1") %>">
+    <td id="lonelink_title"><a href="<%= lonelink.orig %>"><%= lonelink.title %></td>
 		
-		<td class="titolo1">
+		<td class="titolo1_2">
 			<%= form_tag(:controller => "links", :action => "update", :method  => :put) do %>
 				<%#= text_field_tag(:project_id) %>
 				<%= collection_select(nil, :project_id, @projects, :id, :title) %>
@@ -45,6 +33,7 @@
   </tr>
 <% end %>
 </table>
+<br />
 <% end %>
 <%= link_to 'New Project', new_project_path %>
 

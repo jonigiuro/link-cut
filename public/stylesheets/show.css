@@ -113,3 +113,9 @@ tr.odd td{
 	margin-top:20px;
 	margin-bottom:10px;
 }
+
+.titolo1{
+	width:100%;
+	text-align:left;
+	font-size:1em;
+}

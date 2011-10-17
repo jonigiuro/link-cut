@@ -1,0 +1,41 @@
+<% if @project.user_id == current_user.id%>
+
+<p>
+  <h1><%= @project.title %> [<%= @project.id %>]</h1>
+</p>
+
+<% if user_signed_in?%>
+	
+		<% if Link.where("user_id"  => current_user.id).count != 0%>
+
+			<div id="table_links">
+				
+				<table>
+				  <tr>
+						<th>Title</th>
+				    <th>Original</th>
+				    <th>Compressed</th>
+						<th>Delete</th>
+				  </tr>
+
+				<% @links.each do |link| %>
+				  <tr class="<%= cycle("even", "odd") %>">
+						<td class="titolo"><%= truncate(link.title, :length  => 50) %></td>
+				    <td class="longone"><%= link_to truncate(link.orig, :length  => 45), link.orig %></td>
+				    <td class="shortone"><%= BASE_URL %>o/<%= link.comp %></td>
+						<td class="destroy"><%= button_to "X", { :controller  => "links", :action => "destroy", :id => link.id }, :remote  => true, :method => :delete %></td>
+					</tr>
+				<% end %>
+
+				</table>
+				
+			</div>
+		<% else %>
+			You don't have any links yet
+		<% end %>
+<% end %>
+<% else %>
+Project doesn't belong to you
+<% end %>
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

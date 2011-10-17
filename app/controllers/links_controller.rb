@@ -16,11 +16,17 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
   end
   
+  def update
+    @link = Link.find(params[:lonelink])
+    @link.project_id = params[:project_id]
+    @link.save
+    redirect_to :root
+  end
+  
   def destroy
- 
     Link.find(params[:id]).destroy
     if user_signed_in?
-      @links = Link.where("user_id"  => current_user.id)
+      @links = Link.where("user_id"  => current_user.id, "project_id" => Link.find(params[:id]).id)
       @links.sort! { |a,b| b.created_at <=> a.created_at }
     end
     #redirect_to :root
@@ -29,6 +35,7 @@ class LinksController < ApplicationController
       format.js
     end
   end
+  
   def redir
     if Link.where('comp'  => params[:full_path]).count == 0
       render :action  => "non_existing"
@@ -47,9 +54,9 @@ class LinksController < ApplicationController
         @link=Link.new
         @link.orig = params[:full_path]
         url = params[:full_path]
-        doc = Nokogiri::HTML(open(url))
-        @link.title=doc.at_css("title").text
-        #@link.title="test"
+        #doc = Nokogiri::HTML(open(url))
+        #@link.title=doc.at_css("title").text
+        @link.title="test"
         if Link.count == 0
           @link.comp = '0'
         else

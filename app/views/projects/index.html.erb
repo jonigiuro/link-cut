@@ -1,0 +1,66 @@
+<% if user_signed_in? %>
+<h1>Listing projects</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr class="<%= cycle("even", "odd") %>">
+    <td class="titolo1"><%= link_to project.title, project %></td>
+      <td class="shortone1"><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td class="destroy1"><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if @lonelinks.count != 0 %>
+<h3>Orphan links:</h3>
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lonelinks.each do |lonelink| %>
+  <tr class="<%= cycle("even", "odd") %>">
+    <td><%= lonelink.title %></td>
+		
+		<td class="titolo1">
+			<%= form_tag(:controller => "links", :action => "update", :method  => :put) do %>
+				<%#= text_field_tag(:project_id) %>
+				<%= collection_select(nil, :project_id, @projects, :id, :title) %>
+				<%= hidden_field_tag(:lonelink, lonelink.id )%>
+				<%= submit_tag("Update") %>
+			<% end %>
+		</td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<%= link_to 'New Project', new_project_path %>
+
+<% else %>
+
+1. Drag this ->
+<a href="javascript:var%20e=document.createElement('script');e.setAttribute('language','javascript');e.setAttribute('src','<%= BASE_URL %>i/'+encodeURIComponent(location.href));document.body.appendChild(e);void(0);">link-cut</a> <- link to your toolbar<br />
+2. Create an account on this site (feel free to use a fake email address)<br />
+3. Surf the internet<br />
+4. Click on the bookmarklet in your browser's toolbar to shorten and/or store a link (wait for the slow server to respond)<br />
+5. Visit this site to manage and view all your links<br />
+6. Enjoy your life.<br />
+<br />
+This page is pretty damn empty, so here you have a picture of a horny dog:<br /><br />
+<img src="/images/goat.jpg"></img><br /><br />
+
+<div id="footer">e-mail me at joni.giuro@gmail.com</div>
+
+<% end %>

@@ -32,7 +32,7 @@
 
 <% @lonelinks.each do |lonelink| %>
   <tr class="<%= cycle("even", "odd") %>">
-    <td><%= lonelink.title %></td>
+    <td><a href="<%= lonelink.orig %>"><%= lonelink.title %></td>
 		
 		<td class="titolo1">
 			<%= form_tag(:controller => "links", :action => "update", :method  => :put) do %>

@@ -119,3 +119,7 @@ tr.odd td{
 	text-align:left;
 	font-size:1em;
 }
+
+.orphan_orig{
+	width:500px;
+}

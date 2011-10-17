@@ -18,3 +18,9 @@ How this works:
 Off course there's some user authentication in the middle, but that's the basic functionality.
 
 It uses some ajax to remove the links from the list and refresh the view.
+
+--------EDIT--------
+
+Ajax removed for now.
+BUT I added Projects.
+Let's say you're working on a new javascript project, you can create a project called "Javascript" and add all the javascript related links to it. In this way you can keep your links organized.

@@ -2,11 +2,12 @@
 <h3 class="title">Easily compress and store your favourite links</h3>
 </div>
 <% if user_signed_in? %>
+<div id="newbox">
+	<%= link_to 'New Project', new_project_path, :class => "new-project btn btn-large" %>
+</div>
 <h2>Listing projects</h2>
 Signed in as <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_session_path %>
-<div id="newbox">
-	<%= link_to 'New Project', new_project_path, :class => "new-project btn-large" %>
-</div>
+
 <table>
 <div id="projects">
 <% @projects.each do |project| %>

@@ -52,6 +52,11 @@ Signed in as <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_se
 	</h2>
 </div>
 <div id="instructions">
+This tool allows you to easily shorten and store your links.
+Once you're registered and followed these easy steps you will be prompted with your (empty) projects page.<br />
+Go ahead and create a project.<br />
+When you're done just go on a website you whish to save and click on the little bookmaklet you've prevoiusly dragged to your browser's toolbar. A short confirmation message should pop up on the top of the page.<br />
+Now you're ready to go back to your projects page and see your link down there.<br />
 1. Drag this ->
 <a href="javascript:var%20e=document.createElement('script');e.setAttribute('language','javascript');e.setAttribute('src','<%= BASE_URL %>i/'+encodeURIComponent(location.href));document.body.appendChild(e);void(0);" class="btn">link-cut</a> <- link to your toolbar<br />
 2. Create an account on this site (feel free to use a fake email address)<br />

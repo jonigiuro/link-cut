@@ -803,6 +803,9 @@ tr.odd1 td{
 	padding:20px;
 	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .2);
     box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .2);
+    text-align: center;
+	font-weight: lighter;
+	text-shadow: 0px 1px 1px white;
 }
 #hornydog{
 	

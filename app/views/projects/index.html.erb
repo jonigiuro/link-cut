@@ -1,6 +1,9 @@
+<div id="legenda">
+<h3 class="title">Easily compress and store your favourite links</h3>
+</div>
 <% if user_signed_in? %>
-<h1>Listing projects</h1>
-
+<h2>Listing projects</h2>
+Signed in as <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_session_path %>
 <table>
 
 <% @projects.each do |project| %>
@@ -38,18 +41,26 @@
 <%= link_to 'New Project', new_project_path %>
 
 <% else %>
-
+<div id="what">
+	<h2 class="title">
+		What is this?
+	</h2>
+</div>
+<div id="instructions">
 1. Drag this ->
-<a href="javascript:var%20e=document.createElement('script');e.setAttribute('language','javascript');e.setAttribute('src','<%= BASE_URL %>i/'+encodeURIComponent(location.href));document.body.appendChild(e);void(0);">link-cut</a> <- link to your toolbar<br />
+<a href="javascript:var%20e=document.createElement('script');e.setAttribute('language','javascript');e.setAttribute('src','<%= BASE_URL %>i/'+encodeURIComponent(location.href));document.body.appendChild(e);void(0);" class="btn">link-cut</a> <- link to your toolbar<br />
 2. Create an account on this site (feel free to use a fake email address)<br />
 3. Surf the internet<br />
 4. Click on the bookmarklet in your browser's toolbar to shorten and/or store a link (wait for the slow server to respond)<br />
 5. Visit this site to manage and view all your links<br />
 6. Enjoy your life.<br />
 <br />
+<div id="regi-box"><%= link_to 'Register', new_user_registration_path, :class => 'btn blue btn-large' %> &nbsp;<%= link_to 'Sign in', new_user_session_path, :class => 'btn blue btn-large' %></div><br />
 This page is pretty damn empty, so here you have a picture of a horny dog:<br /><br />
-<img src="/images/goat.jpg"></img><br /><br />
+<div id="hornydog">
+	<img src="/images/goat.jpg"></img>
+</div>
 
-<div id="footer">e-mail me at joni.giuro@gmail.com</div>
+</div>
 
 <% end %>

@@ -648,6 +648,14 @@ body{
 	text-shadow: 0px 1px 1px #fff;
     filter: dropshadow(color=#fff, offx=0, offy=-1);
 }
+#legenda{
+	margin-bottom: 50px;
+}
+#legenda h2{
+	margin-bottom: 50px;
+	font-size: 30px;
+	text-shadow: 0px 1px 1px white;
+}
 #legenda, #what{
 	font-family: 'Leckerli One', cursive;
 	text-shadow: 0px 1px 1px #fff;
@@ -796,4 +804,8 @@ tr.odd1 td{
 	
 	margin:0 auto;
 	padding:0;	
+}
+.new-project{
+	font-size:25px;
+	text-shadow: 0px 1px 1px white;
 }

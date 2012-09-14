@@ -5,7 +5,7 @@
 <h2>Listing projects</h2>
 Signed in as <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_session_path %>
 <table>
-
+<div id="projects">
 <% @projects.each do |project| %>
   <tr class="<%= cycle("even", "odd") %>">
     <td class="titolo1"><%= link_to project.title, project %></td>
@@ -14,7 +14,7 @@ Signed in as <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_se
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
 
 <% if @lonelinks.count != 0 %>
@@ -38,7 +38,7 @@ Signed in as <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_se
 </table>
 <br />
 <% end %>
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'New Project', new_project_path, :class => "new-project" %>
 
 <% else %>
 <div id="what">

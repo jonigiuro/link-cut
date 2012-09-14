@@ -819,3 +819,6 @@ tr.odd1 td{
 #newbox{
 	margin-bottom:30px;
 }
+a:hover{
+background:none;
+}

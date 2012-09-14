@@ -4,6 +4,9 @@
 <% if user_signed_in? %>
 <h2>Listing projects</h2>
 Signed in as <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_session_path %>
+<div id="newbox">
+	<%= link_to 'New Project', new_project_path, :class => "new-project btn-large" %>
+</div>
 <table>
 <div id="projects">
 <% @projects.each do |project| %>
@@ -39,9 +42,7 @@ Signed in as <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_se
 <br />
 
 <% end %>
-<div id="newbox">
-	<%= link_to 'New Project', new_project_path, :class => "new-project" %>
-</div>
+
 
 <% else %>
 <div id="what">

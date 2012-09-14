@@ -663,8 +663,8 @@ body{
 }
 #what{
 	background:url('../images/line.png') center center repeat-x;
-	margin-bottom:15px;
-margin-top:50px;
+	margin-bottom: -17px;
+	margin-top:50px;
 }
 
 #what .title{
@@ -806,6 +806,7 @@ tr.odd1 td{
     text-align: center;
 	font-weight: lighter;
 	text-shadow: 0px 1px 1px white;
+	padding-top: 40px;
 }
 #hornydog{
 	

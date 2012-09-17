@@ -1,10 +1,9 @@
-My first Ruby on Rails app, so it might be a bit of a mess.
 
 Gems used:
 - devise (for users registration-authentication)
 - nokogiri (for parsing the title of the website which is being saved)
 
-To make this work you need to create a bookmarklet which has this as an address: javascript:var%20e=document.createElement('script');e.setAttribute('language','javascript');e.setAttribute('src','http://evening-beach-7146.heroku.com/i/'+encodeURIComponent(location.href));document.body.appendChild(e);void(0);
+To make this work you need to create a bookmarklet which has this as an address: javascript:var%20e=document.createElement('script');e.setAttribute('language','javascript');e.setAttribute('src','http://lksh.heroku.com/i/'+encodeURIComponent(location.href));document.body.appendChild(e);void(0);
 
 ---OR---
 
